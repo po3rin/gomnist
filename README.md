@@ -1,8 +1,6 @@
 # gomnist
 
-<img src="https://img.shields.io/badge/go-v1.12-blue.svg"/>
-
-
+<img src="https://img.shields.io/badge/go-v1.12-blue.svg"/> [![GolangCI](https://golangci.com/badges/github.com/po3rin/gomnist.svg)](https://golangci.com)
 
 This package lets you to load the MNIST data set for use with gonum package.
 
