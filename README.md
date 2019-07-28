@@ -1,6 +1,6 @@
 # gomnist
 
-<img src="https://img.shields.io/badge/go-v1.12-blue.svg"/> [![GolangCI](https://golangci.com/badges/github.com/po3rin/gomnist.svg)](https://golangci.com)
+<img src="https://img.shields.io/badge/go-v1.12-blue.svg"/> [![CircleCI](https://circleci.com/gh/po3rin/gomnist.svg?style=shield)](https://circleci.com/gh/po3rin/llb2dot) [![GolangCI](https://golangci.com/badges/github.com/po3rin/gomnist.svg)](https://golangci.com) [![Maintainability](https://api.codeclimate.com/v1/badges/7c29dd3d56a623ba729e/maintainability)](https://codeclimate.com/github/po3rin/gomnist/maintainability)
 
 This package lets you to load the MNIST data set for use with gonum package.
 
