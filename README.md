@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./static/mnist.png">
+  <img src="./static/gomnist.png" width="480px">
   <h3 align="center">gomnist</h3>
   <p align="center">This package lets you to load the MNIST data set for use with gonum package.</p>
 </p>
@@ -10,6 +10,8 @@
 This package lets you to load the MNIST data set for use with gonum package. It is useful when implementing, for example, deep learning using the gonum package.
 
 ## What's MNIST ??
+
+<img src="./static/mnist.png">
 
 [THE MNIST DATABASE](http://yann.lecun.com/exdb/mnist/)
 
