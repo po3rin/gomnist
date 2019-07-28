@@ -1,12 +1,15 @@
-# gomnist
+<p align="center">
+  <img src="./static/mnist.png">
+  <h3 align="center">gomnist</h3>
+  <p align="center">This package lets you to load the MNIST data set for use with gonum package.</p>
+</p>
 
+---
 <img src="https://img.shields.io/badge/go-v1.12-blue.svg"/> [![CircleCI](https://circleci.com/gh/po3rin/gomnist.svg?style=shield)](https://circleci.com/gh/po3rin/llb2dot) [![GolangCI](https://golangci.com/badges/github.com/po3rin/gomnist.svg)](https://golangci.com) [![Maintainability](https://api.codeclimate.com/v1/badges/7c29dd3d56a623ba729e/maintainability)](https://codeclimate.com/github/po3rin/gomnist/maintainability)
 
-This package lets you to load the MNIST data set for use with gonum package.
+This package lets you to load the MNIST data set for use with gonum package. It is useful when implementing, for example, deep learning using the gonum package.
 
 ## What's MNIST ??
-
-<img src="./static/mnist.png">
 
 [THE MNIST DATABASE](http://yann.lecun.com/exdb/mnist/)
 
