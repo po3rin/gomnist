@@ -17,6 +17,21 @@
 
 ## Quick Start
 
+First of all, you should download mnist file.
+[THE MNIST DATABASE](http://yann.lecun.com/exdb/mnist/)
+
+```bash
+# exmple
+.
+└── testdata
+    ├── t10k-images-idx3-ubyte.gz
+    ├── t10k-labels-idx1-ubyte.gz
+    ├── train-images-idx3-ubyte.gz
+    └── train-labels-idx1-ubyte.gz
+```
+
+Using gomnist, you can get MNIST data as gonum matrix.
+
 ```go
 package main
 
@@ -24,7 +39,7 @@ import "github.com/po3rin/gomnist"
 
 func main() {
     // first arg is target dir has mnist file.
-    l := gomnist.NewLoader("./data")
+    l := gomnist.NewLoader("./testdata")
 
     // Do !!
     mnist, err := l.Load()
@@ -57,7 +72,7 @@ package main
 import "github.com/po3rin/gomnist"
 
 func main() {
-    l := gomnist.NewLoader("./data", gomnist.Normalization(true))
+    l := gomnist.NewLoader("./testdata", gomnist.Normalization(true))
     mnist, err := l.Load()
     if err != nil {
       // error handling ...
@@ -77,7 +92,7 @@ package main
 import "github.com/po3rin/gomnist"
 
 func main() {
-    l := gomnist.NewLoader("./data", gomnist.OneHotLabel(true))
+    l := gomnist.NewLoader("./testdata", gomnist.OneHotLabel(true))
     mnist, err := l.Load()
     if err != nil {
       // error handling ...
