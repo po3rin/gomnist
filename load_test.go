@@ -88,7 +88,7 @@ func TestLoadMat(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := gomnist.NewLoader("./data", gomnist.Normalization(tt.normalization))
+			l := gomnist.NewLoader("./testdata", gomnist.Normalization(tt.normalization))
 			mnist, err := l.Load()
 
 			trainData := mnist.TrainData
