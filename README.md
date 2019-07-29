@@ -23,7 +23,10 @@ package main
 import "github.com/po3rin/gomnist"
 
 func main() {
+    // first arg is target dir has mnist file.
     l := gomnist.NewLoader("./data")
+
+    // Do !!
     mnist, err := l.Load()
     if err != nil {
       // error handling ...
@@ -41,6 +44,8 @@ func main() {
 ```
 
 ## Options
+
+#### Normalization
 
 Normalization Options is whether to normalize the input image value to a value between 0 and 1 (Default false)
 
@@ -60,9 +65,7 @@ func main() {
 }
 ```
 
-## Matrix coOptonsation
-
-### Dimension
+## Dimension
 
 (Number of images) * (Total number of pixels : 28*28)
 * trainData:   60000 - 784

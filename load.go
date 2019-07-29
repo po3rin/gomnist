@@ -14,14 +14,14 @@ type MNIST struct {
 	TestLabels  mat.Matrix
 }
 
-// OptionFunc for set loader options.
-type OptionFunc func(l *Loader)
-
 // Loader has loader setting.
 type Loader struct {
 	RootPath      string
 	Normalization bool
 }
+
+// OptionFunc for set loader options.
+type OptionFunc func(l *Loader)
 
 // Normalization is optional function for set normalization config.
 func Normalization(normalization bool) func(l *Loader) {
