@@ -106,6 +106,8 @@ func main() {
 
 ## Dimension
 
+#### Default
+
 (Number of images) * (Total number of pixels : 28*28)
 * trainData:   60000 - 784
 * testData:    10000 - 784
@@ -113,6 +115,12 @@ func main() {
 (Number of images) * (Handwritten digits value)
 * trainLabels: 60000 - 1
 * testLabels:  10000 - 1
+
+#### One-Hot
+
+(Number of images) * (Handwritten digits value)
+* trainLabels: 60000 - 10
+* testLabels:  10000 - 10
 
 ## TODO
 * Download if mnist file do not exits
