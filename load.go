@@ -18,6 +18,7 @@ type MNIST struct {
 type Loader struct {
 	RootPath      string
 	Normalization bool
+	OneHot        bool
 }
 
 // OptionFunc for set loader options.
@@ -27,6 +28,13 @@ type OptionFunc func(l *Loader)
 func Normalization(normalization bool) func(l *Loader) {
 	return func(l *Loader) {
 		l.Normalization = normalization
+	}
+}
+
+// OneHotLabel is optional function to get one-hot labels.
+func OneHotLabel(oneHot bool) func(l *Loader) {
+	return func(l *Loader) {
+		l.OneHot = oneHot
 	}
 }
 
@@ -50,8 +58,8 @@ func (l *Loader) Load() (MNIST, error) {
 		return MNIST{}, errors.Wrap(err, "gomnist: failed to load mnist data")
 	}
 
-	trainData, trainLabels := set2Mat(trainSet, l.Normalization)
-	testData, testLabels := set2Mat(testSet, l.Normalization)
+	trainData, trainLabels := set2Mat(trainSet, l.Normalization, l.OneHot)
+	testData, testLabels := set2Mat(testSet, l.Normalization, l.OneHot)
 
 	return MNIST{
 		TrainData:   trainData,

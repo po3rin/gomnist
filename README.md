@@ -38,16 +38,18 @@ func main() {
     //   TestData    mat.Matrix
     //   TestLabels  mat.Matrix
     // }
-    mnist.TrainData.At(0, 135)
+    _ = mnist.TrainData.At(0, 135)
     // 55
 }
 ```
 
 ## Options
 
+gomnist options is implimented as Functional Option Pattern.
+
 #### Normalization
 
-Normalization Options is whether to normalize the input image value to a value between 0 and 1 (Default false)
+Normalization Option is whether to normalize the input image value to a value between 0 and 1 (Default false)
 
 ```go
 package main
@@ -60,8 +62,30 @@ func main() {
     if err != nil {
       // error handling ...
     }
-    mnist.TrainData.At(0, 135)
+    _ = mnist.TrainData.At(0, 135)
     // 0.21568627450980393
+}
+```
+
+#### One-Hot Label
+
+OneHotLabel Option is whether to set one-hot label.
+
+```go
+package main
+
+import "github.com/po3rin/gomnist"
+
+func main() {
+    l := gomnist.NewLoader("./data", gomnist.OneHotLabel(true))
+    mnist, err := l.Load()
+    if err != nil {
+      // error handling ...
+    }
+    _ = mnist.TrainLabel
+    // ⎡0 0 0 0 0 1 0 0 0 0 0⎤
+    // ⎢          .          ⎥
+    // ⎣          .          ⎦
 }
 ```
 

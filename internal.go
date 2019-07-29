@@ -17,9 +17,14 @@ func load(rootPath string) (train *GoMNIST.Set, test *GoMNIST.Set, err error) {
 	return trainSet, testSet, nil
 }
 
-func set2Mat(s *GoMNIST.Set, normalization bool) (data mat.Matrix, labels mat.Matrix) {
+func set2Mat(s *GoMNIST.Set, normalization bool, oneHot bool) (data mat.Matrix, labels mat.Matrix) {
 	d := mat.NewDense(len(s.Images), s.NRow*s.NRow, nil)
-	l := mat.NewDense(len(s.Labels), 1, nil)
+	var l *mat.Dense
+	if oneHot {
+		l = mat.NewDense(len(s.Labels), 10, nil)
+	} else {
+		l = mat.NewDense(len(s.Labels), 1, nil)
+	}
 
 	var wg sync.WaitGroup
 	for i := 0; i < len(s.Images); i++ {
@@ -41,8 +46,17 @@ func set2Mat(s *GoMNIST.Set, normalization bool) (data mat.Matrix, labels mat.Ma
 				}
 			}
 
+			var labelVec []float64
+			if oneHot {
+				labelVec = make([]float64, 10, 10)
+				labelVec[int(label)] = 1
+			} else {
+				labelVec = make([]float64, 1, 1)
+				labelVec = []float64{float64(label)}
+			}
+
 			d.SetRow(i, imageVec)
-			l.SetRow(i, []float64{float64(label)})
+			l.SetRow(i, labelVec)
 
 			wg.Done()
 		}(i)
